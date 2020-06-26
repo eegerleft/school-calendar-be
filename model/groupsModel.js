@@ -24,6 +24,7 @@ function findGroupsByAdminId(adminId){
 function addGroup(newGroupInfo){
     return db('groups')
             .insert(newGroupInfo)
+            .returning(["id"])
 }
 
 // find group by groupId
@@ -43,7 +44,8 @@ function findContactsByGroupId(groupId) {
 // add contact to a group
 function addContact(contactId, groupId){
     return db('contact_group')
-        .insert({contactId: contactId, groupId: groupId});
+        .insert({contactId: contactId, groupId: groupId})
+        .returning(["id"]);
 
 }
 
