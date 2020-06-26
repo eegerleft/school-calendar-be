@@ -1,4 +1,5 @@
 ## Code Climate
+
 [![Maintainability](https://api.codeclimate.com/v1/badges/9dbd40cc5a146921dc69/maintainability)](https://codeclimate.com/github/Lambda-School-Labs/school-calendar-be/maintainability)
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/9dbd40cc5a146921dc69/test_coverage)](https://codeclimate.com/github/Lambda-School-Labs/school-calendar-be/test_coverage)
@@ -7,62 +8,69 @@
 
 #### 1️⃣ Backend delpoyed at [Heroku](https://lab17-makata.herokuapp.com) <br>
 
+# d8picker Team
+
 ## 1️⃣ Getting started
 
 To get the server running locally:
 
 - Clone this repo
 - **npm install** to install all required dependencies
-- **npm start** to start the local server
+- **npm run dev** to start the local server
 
+## Back-End Responsibilites
 
-### Backend framework goes here
+---
 
+**d8picker** stores it's data in a **PostgreSQL** database. The database is made up of the following tables:
 
+- Admin
+- Templates
+- Contacts
+- Contacts-Admin
+- Groups
+- Contacts-Group
+- Event-Groups
 
-## 2️⃣ Endpoints
+Endpoints allows the frontend to:
 
+- Retrieve a list of contacts, events and groups.
+- Retrieve information that pertains to an event.
+- Update and delete events, contacts and groups data.
 
+## Tech Stack
 
-#### Calendar Routes
+- axios
+- bcryptjs
+- cors
+- dotenv
+- express
+- google-auth-library
+- helmet
+- knex
+- pg
+- sqlite3
+- twilio
+- jest
+- supertest
 
+## Endpoints
 
-#### User Routes
-
-
-#### Event Routes
-
-
-# Data Model
-
-
-
-#### 2️⃣ Calendars
-
--
-#### USERS
-
-
-#### Events
-
-
-
-## 2️⃣ Actions
-
-
-
-<br>
-<br>
-<br>
-
+In order for the front end to access endpoints the google token is required. This token is stored in routes/token.js
 
 ## 3️⃣ Environment Variables
 
-In order for the app to function correctly, the user must set up their own environment variables.
+In order for the app to function correctly, the user must set up their own environment variables and input their Twilio info.
 
 create a .env file that includes the following:
-No need for .env file
-    
+
+1. TWILIO_ACCOUNT_SID "sid provided by Twilio".
+2. TWILIO_AUTH_TOKEN "token provided by Twilio".
+3. MY_PHONE_NUMBER "The phone number that recieves SMS".
+4. TWILIO_NUMBER "phone number provided by Twilio".
+5. DATABASE_URL
+6. DB_ENV
+
 ## Contributing
 
 When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other method with the owners of this repository before making a change.
@@ -71,11 +79,12 @@ Please note we have a [code of conduct](./code_of_conduct.md). Please follow it 
 
 ### Issue/Bug Request
 
- **If you are having an issue with the existing project code, please submit a bug report under the following guidelines:**
- - Check first to see if your issue has already been reported.
- - Check to see if the issue has recently been fixed by attempting to reproduce the issue using the latest master branch in the repository.
- - Create a live example of the problem.
- - Submit a detailed bug report including your environment & browser, steps to reproduce the issue, actual and expected outcomes,  where you believe the issue is originating from, and any potential solutions you have considered.
+**If you are having an issue with the existing project code, please submit a bug report under the following guidelines:**
+
+- Check first to see if your issue has already been reported.
+- Check to see if the issue has recently been fixed by attempting to reproduce the issue using the latest master branch in the repository.
+- Create a live example of the problem.
+- Submit a detailed bug report including your environment & browser, steps to reproduce the issue, actual and expected outcomes, where you believe the issue is originating from, and any potential solutions you have considered.
 
 ### Feature Requests
 
